@@ -1,0 +1,99 @@
+/* 
+CORES:
+      Vermelho-escuro:  #540600
+      Vermelho: #8d1600
+      Vermelho-claro: #b21400
+      Amarelo: #fcce1f
+      Amarelo-escuro: #e09300
+      Laranja: #dd7900
+      marrom: #6d1503
+      Marrom-escuro: #420900
+*/
+body{
+  background-color: #540600;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.tela{
+  background-image: radial-gradient( #8d1600, #540600);
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+
+#botoes-inicio{
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+
+}
+
+#logo-fortune{
+  max-width: 400px;
+}
+
+#tela-jogo{
+  display: none;
+}
+
+
+
+button{
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 0.5cm;
+  background-color: #fcce1f;
+  background-image: linear-gradient(to bottom, #fcce1f, #dd7900);
+  width: 130px;
+  height: 40px;
+  color: #420900;
+  border-radius: 10px;
+  border: #420900 solid;
+  box-shadow: #420900 5px 5px 0px 0px;
+  cursor: pointer;
+}
+
+
+
+/* config */
+
+
+
+h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      color: #fffbea;
+      text-shadow: 2px 2px #c04000;
+    }
+
+    .slot-container {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      gap: 15px;
+      justify-content: center;
+      margin: 30px 0;
+    }
+
+    .slot {
+      width: 100px;
+      height: 100px;
+      background-color: #fff5cc;
+      border: 4px solid #ff9900;
+      border-radius: 12px;
+      font-size: 2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ff6600;
+      box-shadow: 0 0 10px #ffae42;
+    }
+ #result {
+      margin-top: 20px;
+      font-size: 1.5em;
+      color: #fffbe0;
+    }
