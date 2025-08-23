@@ -65,6 +65,18 @@
   </style>
 </head>
 <body>
+  <div class="container">
+    <h2>Pagamento Demo</h2>
+    <div class="saldo" id="saldo">Saldo: R$ 0,00</div>
+
+    <h3>Depositar</h3>
+    <input type="number" id="deposito" placeholder="Valor a depositar">
+    <button onclick="depositar()">Depositar</button>
+
+    <h3>Sacar</h3>
+    <input type="number" id="saque" placeholder="Valor a sacar">
+    <button class="saque" onclick="sacar()">Sacar</button>
+  </div>
 
   <h1>🎰 Fortune Tiger</h1>
 
@@ -85,6 +97,41 @@
   <div id="result"></div>
 
   <script>
+    let saldo = 0;
+
+  function atualizarSaldo() {
+    document.getElementById("saldo").innerText =
+      "Saldo: R$ " + saldo.toFixed(2).replace(".", ",");
+  }
+
+  function depositar() {
+    let valor = parseFloat(document.getElementById("deposito").value);
+    if (isNaN(valor) || valor <= 0) {
+      alert("Por favor, insira um valor válido para depositar.");
+      return;
+    }
+    saldo += valor;
+    atualizarSaldo();
+    document.getElementById("deposito").value = "";
+  }
+
+  function sacar() {
+    let valor = parseFloat(document.getElementById("saque").value);
+    if (isNaN(valor) || valor <= 0) {
+      alert("Informe um valor válido para saque!");
+      return;
+    }
+    if (valor > saldo) {
+      alert("Saldo insuficiente!");
+      return;
+    }
+    saldo -= valor;
+    atualizarSaldo();
+    document.getElementById("saque").value = "";
+  }
+
+  atualizarSaldo();
+
     const symbols = ['🐯', '💰', '💎', '🍀', '🔥'];
     const slots = document.querySelectorAll('.slot');
     const result = document.getElementById('result');
