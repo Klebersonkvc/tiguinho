@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
+<<<<<<< HEAD
   <meta charset="UTF-8">
   <title>Bet Dog</title>
   <style>
@@ -63,82 +64,105 @@
       color: #fffbe0;
     }
   </style>
+=======
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <script src="./script.js"></script>
+    <title>FORTUNE CARAMELO</title>
+>>>>>>> 1b8ee39f2912a54e5181d8b6dcdbc9eaf42c3158
 </head>
 <body>
-  <div class="container">
-    <h2>Pagamento Demo</h2>
-    <div class="saldo" id="saldo">Saldo: R$ 0,00</div>
+  <main>
+    <!-- -------------------- Landing Page ------------------------------ -->
+    <div>
 
-    <h3>Depositar</h3>
-    <input type="number" id="deposito" placeholder="Valor a depositar">
-    <button onclick="depositar()">Depositar</button>
+    </div>
+    <!------------------------------------------------------------------  -->
+    <!-- ******* -->
+    <!-- ------------------- Tela de Início ------------------------------>
+    <div id="tela-inicio" class="tela inicio">
+        <img src="./img/fortune-caramelo.png" alt="fortune logo" id="logo-fortune">
+        <div id="botoes-inicio">
+            <button onclick="iniciarJogo()">Iniciar</button>
+            <button>Sobre</button>
+            <button>Sair</button>
+        </div>
+    </div>
+    <!-- --------------------------------------------------------------- -->
+     <!-- ******** -->
+    <!----------------------- Tela de formulário ------(incompleto)------ -->
+    <div id="popup-formulario">
+        <div class="container">
+          <h2>Pagamento Demo</h2>
+        <div class="saldo" id="saldo">Saldo: R$ 0,00</div>
 
-    <h3>Sacar</h3>
-    <input type="number" id="saque" placeholder="Valor a sacar">
-    <button class="saque" onclick="sacar()">Sacar</button>
-  </div>
+        <h3>Depositar</h3>
+        <input type="number" id="deposito" placeholder="Valor a depositar">
+          <button onclick="depositar()">Depositar</button>
 
+<<<<<<< HEAD
   <h1>🎰 Fortune Caramelo</h1>
+=======
+        <h3>Sacar</h3>
+        <input type="number" id="saque" placeholder="Valor a sacar">
+          <button class="saque" onclick="sacar()">Sacar</button>
+      </div>
+    </div>
+    <!-- --------------------------------------------------------------- -->
+    <!-- *********** -->
+    <!-- -------------------- Tela de Jogo --------(incompleto)------- -->
+    <div id="tela-jogo" class="tela jogo">
+      <div class="score">
+        <a>SCORE<br>
+        R$ 276,00<br></a>
+        <p>*As jogadas custam R$10,00</p>
+      </div>
+      <div>
+        <div class="tiles">
+          <div class="colunaTrans"></div>
+          <div class="coluna01">
+            <img src="./img/tile3.png" class="tile" id="tile1">
+            <img src="./img/tile1.png" class="tile" id="tile2">
+            <img src="./img/tile2.png" class="tile" id="tile3">
+          </div>
+          <div class="coluna02">
+            <img src="./img/tile4.png" class="tile" id="tile4">
+            <img src="./img/tile1.png" class="tile" id="tile5">
+            <img src="./img/tile5.png" class="tile" id="tile6">
+          </div>
+          <div class="coluna03">
+            <img src="./img/tile2.png" class="tile" id="tile7">
+            <img src="./img/tile1.png" class="tile" id="tile8">
+            <img src="./img/tile3.png" class="tile" id="tile9">
+          </div>
+          <div class="colunaTrans2"></div>
+        </div>
+        <div class="container-niquel">        </div>
+      </div>
+      <div class="botoes jogo">
+       
+        <button onclick="jogar()">JOGAR</button>
+        <button onclick="sair()">SAIR</button>
+      </div>
+    </div>
+    <!-- ---------------------------------------------------------- -->
+     <!-- ********** -->
+>>>>>>> 1b8ee39f2912a54e5181d8b6dcdbc9eaf42c3158
 
-  <div class="slot-container" id="slotGrid">
-    <div class="slot">🐯</div>
-    <div class="slot">🍀</div>
-    <div class="slot">💰</div>
-    <div class="slot">🔥</div>
-    <div class="slot">🐯</div>
-    <div class="slot">💎</div>
-    <div class="slot">🍀</div>
-    <div class="slot">💰</div>
-    <div class="slot">🐯</div>
-  </div>
+    </main>
 
-  <button onclick="girar()">Girar</button>
 
-  <div id="result"></div>
 
-  <script>
-    let saldo = 0;
-
-  function atualizarSaldo() {
-    document.getElementById("saldo").innerText =
-      "Saldo: R$ " + saldo.toFixed(2).replace(".", ",");
-  }
-
-  function depositar() {
-    let valor = parseFloat(document.getElementById("deposito").value);
-    if (isNaN(valor) || valor <= 0) {
-      alert("Por favor, insira um valor válido para depositar.");
-      return;
-    }
-    saldo += valor;
-    atualizarSaldo();
-    document.getElementById("deposito").value = "";
-  }
-
-  function sacar() {
-    let valor = parseFloat(document.getElementById("saque").value);
-    if (isNaN(valor) || valor <= 0) {
-      alert("Informe um valor válido para saque!");
-      return;
-    }
-    if (valor > saldo) {
-      alert("Saldo insuficiente!");
-      return;
-    }
-    saldo -= valor;
-    atualizarSaldo();
-    document.getElementById("saque").value = "";
-  }
-
-  atualizarSaldo();
-
+    <!-- <script>
+           
     const symbols = ['🐯', '💰', '💎', '🍀', '🔥'];
     const slots = document.querySelectorAll('.slot');
     const result = document.getElementById('result');
 
     function girar() {
       let tigerCount = 0;
-
+        
       slots.forEach(slot => {
         const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
         slot.textContent = randomSymbol;
@@ -151,7 +175,6 @@
         result.textContent = '😢 Tente novamente!';
       }
     }
-  </script>
-
+    </script> -->
 </body>
 </html>
