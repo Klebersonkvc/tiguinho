@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <script src="./script.js"></script>
   <title>Fortune Tiger - Slot Simulado</title>
   <style>
     body {
@@ -67,19 +66,6 @@
 </head>
 <body>
 
-  <div class="container">
-    <h2>Pagamento Demo</h2>
-    <div class="saldo" id="saldo">Saldo: R$ 0,00</div>
-
-    <h3>Depositar</h3>
-    <input type="number" id="deposito" placeholder="Valor a depositar">
-    <button onclick="depositar()">Depositar</button>
-
-    <h3>Sacar</h3>
-    <input type="number" id="saque" placeholder="Valor a sacar">
-    <button class="saque" onclick="sacar()">Sacar</button>
-  </div>
-
   <h1>🎰 Fortune Tiger</h1>
 
   <div class="slot-container" id="slotGrid">
@@ -99,7 +85,6 @@
   <div id="result"></div>
 
   <script>
-    
     const symbols = ['🐯', '💰', '💎', '🍀', '🔥'];
     const slots = document.querySelectorAll('.slot');
     const result = document.getElementById('result');
@@ -119,9 +104,7 @@
         result.textContent = '😢 Tente novamente!';
       }
     }
-
   </script>
- 
 
 </body>
 </html>

@@ -1,11 +1,11 @@
 // MUSICA & Sons....
 function musica(){
-  let musica = new Audio("./sound/musica.mp3");
+  let musica = new Audio("./teste/sound/musica.mp3");
   musica.play
 }
 
 function click(){
-    let audio = new Audio("./sounds/buttonClick.mp3");
+    let audio = new Audio("./teste/sounds/buttonClick.mp3");
     audio.play();
 }
 // Funções...
