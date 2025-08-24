@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <script src="./script.js"></script>
   <title>Fortune Tiger - Slot Simulado</title>
   <style>
     body {
@@ -66,6 +67,8 @@
 </head>
 <body>
 
+  
+
   <h1>🎰 Fortune Tiger</h1>
 
   <div class="slot-container" id="slotGrid">
@@ -84,27 +87,7 @@
 
   <div id="result"></div>
 
-  <script>
-    const symbols = ['🐯', '💰', '💎', '🍀', '🔥'];
-    const slots = document.querySelectorAll('.slot');
-    const result = document.getElementById('result');
-
-    function girar() {
-      let tigerCount = 0;
-
-      slots.forEach(slot => {
-        const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
-        slot.textContent = randomSymbol;
-        if (randomSymbol === '🐯') tigerCount++;
-      });
-
-      if (tigerCount >= 3) {
-        result.textContent = '🎉 Você ganhou com ' + tigerCount + ' tigrinhos!';
-      } else {
-        result.textContent = '😢 Tente novamente!';
-      }
-    }
-  </script>
+ 
 
 </body>
 </html>

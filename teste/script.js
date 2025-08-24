@@ -10,11 +10,16 @@ function click(){
 }
 // Funções...
 
-  function jogar(){
+function jogar(){
     click();
     musica();
     document.getElementById("tela-inicio").style.display="none";
     document.getElementById("tela-jogo").style.display="flex";
+}
+
+function sair(){
+  document.getElementById("tela-inicio").style.display="flex";
+    document.getElementById("tela-jogo").style.display="none";
 }
 
 

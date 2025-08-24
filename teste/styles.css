@@ -42,6 +42,11 @@ body{
   display: none;
 }
 
+#popup-formulario{
+  display:none;
+  border: #420900 solid;
+  
+}
 
 
 button{
