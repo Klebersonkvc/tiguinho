@@ -17,12 +17,43 @@
     <!-- ******* -->
     <!-- ------------------- Tela de Início ------------------------------>
     <div id="tela-inicio" class="tela inicio">
-        <img src="./img/fortune-caramelo.png" alt="fortune logo" id="logo-fortune">
+        <div class="caramelo-da-sorte">
+          <img src="./img/caramelo-sem-moeda1.png" alt="fortune logo" id="logo-fortune">
+          <img src="./img/moedas.png" alt="moedas" id="moedas">
+        </div><br><br>
         <div id="botoes-inicio">
             <button onclick="iniciarJogo()">Iniciar</button>
             <button>Sobre</button>
             <button>Sair</button>
         </div>
+         <div class="sparkle">
+      <span class="icone" style="--i: 13;"></span>
+      <span class="icone" style="--i: 29;"></span>
+      <span class="icone" style="--i: 7;"></span>
+      <span class="icone" style="--i: 22;"></span>
+      <span class="icone" style="--i: 41;"></span>
+      <span class="icone" style="--i: 18;"></span>
+      <span class="icone" style="--i: 35;"></span>
+      <span class="icone" style="--i: 50;"></span>
+      <span class="icone" style="--i: 4;"></span>
+      <span class="icone" style="--i: 27;"></span>
+      <span class="icone" style="--i: 63;"></span>
+      <span class="icone" style="--i: 81;"></span>
+      <span class="icone" style="--i: 56;"></span>
+      <span class="icone" style="--i: 12;"></span>
+      <span class="icone" style="--i: 37;"></span>
+      <span class="icone" style="--i: 64;"></span>
+      <span class="icone" style="--i: 20;"></span>
+      <span class="icone" style="--i: 48;"></span>
+      <span class="icone" style="--i: 39;"></span>
+      <span class="icone" style="--i: 55;"></span>
+      <span class="icone" style="--i: 11;"></span>
+      <span class="icone" style="--i: 49;"></span>
+      <span class="icone" style="--i: 25;"></span>
+      <span class="icone" style="--i: 31;"></span>
+      <span class="icone" style="--i: 9;"></span>
+      <span class="icone" style="--i: 72;"></span>
+    </div>
     </div>
     <!-- --------------------------------------------------------------- -->
      <!-- ******** -->
@@ -83,29 +114,5 @@
 
     </main>
 
-
-
-    <!-- <script>
-           
-    const symbols = ['🐯', '💰', '💎', '🍀', '🔥'];
-    const slots = document.querySelectorAll('.slot');
-    const result = document.getElementById('result');
-
-    function girar() {
-      let tigerCount = 0;
-        
-      slots.forEach(slot => {
-        const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
-        slot.textContent = randomSymbol;
-        if (randomSymbol === '🐯') tigerCount++;
-      });
-
-      if (tigerCount >= 3) {
-        result.textContent = '🎉 Você ganhou com ' + tigerCount + ' tigrinhos!';
-      } else {
-        result.textContent = '😢 Tente novamente!';
-      }
-    }
-    </script> -->
 </body>
 </html>
