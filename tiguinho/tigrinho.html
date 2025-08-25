@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <script src="./script.js"></script>
+    <title>FORTUNE CARAMELO</title>
+</head>
+<body>
+  <main>
+    <!-- -------------------- Landing Page ------------------------------ -->
+    <div>
+
+    </div>
+    <!------------------------------------------------------------------  -->
+    <!-- ******* -->
+    <!-- ------------------- Tela de Início ------------------------------>
+    <div id="tela-inicio" class="tela inicio">
+        <div class="caramelo-da-sorte">
+          <img src="./img/caramelo-sem-moeda1.png" alt="fortune logo" id="logo-fortune">
+          <img src="./img/moedas.png" alt="moedas" id="moedas">
+        </div><br><br>
+        <div id="botoes-inicio">
+            <button onclick="iniciarJogo()">Iniciar</button>
+            <button>Sobre</button>
+            <button>Sair</button>
+        </div>
+         <div class="sparkle">
+      <span class="icone" style="--i: 13;"></span>
+      <span class="icone" style="--i: 29;"></span>
+      <span class="icone" style="--i: 7;"></span>
+      <span class="icone" style="--i: 22;"></span>
+      <span class="icone" style="--i: 41;"></span>
+      <span class="icone" style="--i: 18;"></span>
+      <span class="icone" style="--i: 35;"></span>
+      <span class="icone" style="--i: 50;"></span>
+      <span class="icone" style="--i: 4;"></span>
+      <span class="icone" style="--i: 27;"></span>
+      <span class="icone" style="--i: 63;"></span>
+      <span class="icone" style="--i: 81;"></span>
+      <span class="icone" style="--i: 56;"></span>
+      <span class="icone" style="--i: 12;"></span>
+      <span class="icone" style="--i: 37;"></span>
+      <span class="icone" style="--i: 64;"></span>
+      <span class="icone" style="--i: 20;"></span>
+      <span class="icone" style="--i: 48;"></span>
+      <span class="icone" style="--i: 39;"></span>
+      <span class="icone" style="--i: 55;"></span>
+      <span class="icone" style="--i: 11;"></span>
+      <span class="icone" style="--i: 49;"></span>
+      <span class="icone" style="--i: 25;"></span>
+      <span class="icone" style="--i: 31;"></span>
+      <span class="icone" style="--i: 9;"></span>
+      <span class="icone" style="--i: 72;"></span>
+    </div>
+    </div>
+    <!-- --------------------------------------------------------------- -->
+     <!-- ******** -->
+    <!----------------------- Tela de formulário ------(incompleto)------ -->
+    <div id="popup-formulario">
+        <div class="container">
+          <h2>Pagamento Demo</h2>
+        <div class="saldo" id="saldo">Saldo: R$ 0,00</div>
+
+        <h3>Depositar</h3>
+        <input type="number" id="deposito" placeholder="Valor a depositar">
+          <button onclick="depositar()">Depositar</button>
+
+        <h3>Sacar</h3>
+        <input type="number" id="saque" placeholder="Valor a sacar">
+          <button class="saque" onclick="sacar()">Sacar</button>
+      </div>
+    </div>
+    <!-- --------------------------------------------------------------- -->
+    <!-- *********** -->
+    <!-- -------------------- Tela de Jogo --------(incompleto)------- -->
+    <div id="tela-jogo" class="tela jogo">
+      <div class="score">
+        <a>SCORE<br>
+        R$ 276,00<br></a>
+        <p>*As jogadas custam R$10,00</p>
+      </div>
+      <div>
+        <div class="tiles">
+          <div class="colunaTrans"></div>
+          <div class="coluna01">
+            <img src="./img/tile3.png" class="tile" id="tile1">
+            <img src="./img/tile1.png" class="tile" id="tile2">
+            <img src="./img/tile2.png" class="tile" id="tile3">
+          </div>
+          <div class="coluna02">
+            <img src="./img/tile4.png" class="tile" id="tile4">
+            <img src="./img/tile1.png" class="tile" id="tile5">
+            <img src="./img/tile5.png" class="tile" id="tile6">
+          </div>
+          <div class="coluna03">
+            <img src="./img/tile2.png" class="tile" id="tile7">
+            <img src="./img/tile1.png" class="tile" id="tile8">
+            <img src="./img/tile3.png" class="tile" id="tile9">
+          </div>
+          <div class="colunaTrans2"></div>
+        </div>
+        <div class="container-niquel">        </div>
+      </div>
+      <div class="botoes jogo">
+       
+        <button onclick="jogar()">JOGAR</button>
+        <button onclick="sair()">SAIR</button>
+      </div>
+    </div>
+    <!-- ---------------------------------------------------------- -->
+     <!-- ********** -->
+
+    </main>
+
+</body>
+</html>
