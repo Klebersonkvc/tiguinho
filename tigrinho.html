@@ -1,76 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<<<<<<< HEAD
-  <meta charset="UTF-8">
-  <title>Bet Dog</title>
-  <style>
-    body {
-      background: linear-gradient(to bottom, #ffcc00, #ff6600);
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      padding: 30px;
-      color: #fff;
-    }
-
-    h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      color: #fffbea;
-      text-shadow: 2px 2px #c04000;
-    }
-
-    .slot-container {
-      display: grid;
-      grid-template-columns: repeat(3, 100px);
-      gap: 15px;
-      justify-content: center;
-      margin: 30px 0;
-    }
-
-    .slot {
-      width: 100px;
-      height: 100px;
-      background-color: #fff5cc;
-      border: 4px solid #ff9900;
-      border-radius: 12px;
-      font-size: 2em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ff6600;
-      box-shadow: 0 0 10px #ffae42;
-    }
-
-    button {
-      background-color: #ff3300;
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    }
-
-    button:hover {
-      background-color: #cc0000;
-    }
-
-    #result {
-      margin-top: 20px;
-      font-size: 1.5em;
-      color: #fffbe0;
-    }
-  </style>
-=======
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./styles.css">
     <script src="./script.js"></script>
     <title>FORTUNE CARAMELO</title>
->>>>>>> 1b8ee39f2912a54e5181d8b6dcdbc9eaf42c3158
 </head>
 <body>
   <main>
@@ -82,12 +17,43 @@
     <!-- ******* -->
     <!-- ------------------- Tela de Início ------------------------------>
     <div id="tela-inicio" class="tela inicio">
-        <img src="./img/fortune-caramelo.png" alt="fortune logo" id="logo-fortune">
+        <div class="caramelo-da-sorte">
+          <img src="./img/caramelo-sem-moeda1.png" alt="fortune logo" id="logo-fortune">
+          <img src="./img/moedas.png" alt="moedas" id="moedas">
+        </div>
         <div id="botoes-inicio">
             <button onclick="iniciarJogo()">Iniciar</button>
             <button>Sobre</button>
             <button>Sair</button>
         </div>
+         <div class="sparkle">
+      <span class="icone" style="--i: 13;"></span>
+      <span class="icone" style="--i: 29;"></span>
+      <span class="icone" style="--i: 7;"></span>
+      <span class="icone" style="--i: 22;"></span>
+      <span class="icone" style="--i: 41;"></span>
+      <span class="icone" style="--i: 18;"></span>
+      <span class="icone" style="--i: 35;"></span>
+      <span class="icone" style="--i: 50;"></span>
+      <span class="icone" style="--i: 4;"></span>
+      <span class="icone" style="--i: 27;"></span>
+      <span class="icone" style="--i: 63;"></span>
+      <span class="icone" style="--i: 81;"></span>
+      <span class="icone" style="--i: 56;"></span>
+      <span class="icone" style="--i: 12;"></span>
+      <span class="icone" style="--i: 37;"></span>
+      <span class="icone" style="--i: 64;"></span>
+      <span class="icone" style="--i: 20;"></span>
+      <span class="icone" style="--i: 48;"></span>
+      <span class="icone" style="--i: 39;"></span>
+      <span class="icone" style="--i: 55;"></span>
+      <span class="icone" style="--i: 11;"></span>
+      <span class="icone" style="--i: 49;"></span>
+      <span class="icone" style="--i: 25;"></span>
+      <span class="icone" style="--i: 31;"></span>
+      <span class="icone" style="--i: 9;"></span>
+      <span class="icone" style="--i: 72;"></span>
+    </div>
     </div>
     <!-- --------------------------------------------------------------- -->
      <!-- ******** -->
@@ -101,9 +67,6 @@
         <input type="number" id="deposito" placeholder="Valor a depositar">
           <button onclick="depositar()">Depositar</button>
 
-<<<<<<< HEAD
-  <h1>🎰 Fortune Caramelo</h1>
-=======
         <h3>Sacar</h3>
         <input type="number" id="saque" placeholder="Valor a sacar">
           <button class="saque" onclick="sacar()">Sacar</button>
@@ -148,7 +111,6 @@
     </div>
     <!-- ---------------------------------------------------------- -->
      <!-- ********** -->
->>>>>>> 1b8ee39f2912a54e5181d8b6dcdbc9eaf42c3158
 
     </main>
 

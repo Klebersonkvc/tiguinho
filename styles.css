@@ -47,7 +47,8 @@ button{
 /* ---------------------- CSS TELA DE INÍCIO --------------------- */
 .tela{
   background-image: radial-gradient( #8d1600, #540600);
-  height: 100dvg;
+  height: 100%;
+  width: 100%;
   align-items: center;
   display: flex;
   justify-content: center;
@@ -67,6 +68,68 @@ button{
   max-width: 400px;
 }
 
+/*---------------------- CSS ANIMAÇÕES NA TELA DE INICIO*/
+#tela-inicio{
+  position: absolute;
+  z-index: 1;
+}
+
+.caramelo-da-sorte{
+  display: grid;
+  grid-template-columns: repeat(8,6rem);
+  grid-template-rows: repeat(6.6rem);
+}
+
+.caramelo-da-sorte > img:nth-child(1){
+  grid-row: 2/6;
+  grid-column: 3/8;
+  z-index: -1;
+}
+
+.caramelo-da-sorte > img:nth-child(2){
+  grid-row: 2/6;
+  grid-column: 3/7;
+  transition: 1s;
+  z-index: 100;
+}
+ 
+.caramelo-da-sorte > img{
+  width: 100%;
+  
+  object-fit: cover;
+}
+
+.caramelo-da-sorte :hover{
+  transform: scale(1.5);
+}
+.sparkle{
+    width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  position: absolute;
+  z-index: -2;
+}
+
+.icone{
+  width: 80px;
+  height: 80px;
+  background-image: url('./img/sparkle.png');
+  background-size: contain;
+  background-position:center;
+  background-repeat: no-repeat;
+  animation: anima linear infinite;
+  animation-duration: calc(300s / var(--i));
+}
+
+@keyframes anima{
+  0%{
+    transform: translateY(100vh) scale(0) rotate(0deg);
+  }
+  100%{
+    transform: translateY(-10vh) scale(1) rotate(360deg);
+  }
+}
 /* ---------------------------------------------------------------- */
 /* ************ */
 /* ------------------------------ CSS FORMULARIO ----------------------- */
