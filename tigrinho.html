@@ -15,16 +15,27 @@
     </div>
     <!------------------------------------------------------------------  -->
     <!-- ******* -->
+    <!-- ------------------ Pagamento ----------------------------------- -->
+    <div class="container Pagamento">
+    <h2>Pagamento Demo</h2>
+    <div class="saldo" id="saldo">Saldo: R$ 0,00</div>
+
+    <h3>Depositar</h3>
+    <input type="number" id="deposito" placeholder="Valor a depositar">
+    <button onclick="depositar()">Depositar</button>
+
+    <h3>Sacar</h3>
+    <input type="number" id="saque" placeholder="Valor a sacar">
+    <button class="saque" onclick="sacar()">Sacar</button>
+    </div>
+    <!-- ------------------------------------------------ -->
+    <!-- ******* -->
     <!-- ------------------- Tela de Início ------------------------------>
     <div id="tela-inicio" class="tela inicio">
         <div class="caramelo-da-sorte">
           <img src="./img/caramelo-sem-moeda1.png" alt="fortune logo" id="logo-fortune">
           <img src="./img/moedas.png" alt="moedas" id="moedas">
-<<<<<<< HEAD
         </div><br><br>
-=======
-        </div>
->>>>>>> f95153d9f25317b776bda3248b41bb70ec35576b
         <div id="botoes-inicio">
             <button onclick="iniciarJogo()">Iniciar</button>
             <button>Sobre</button>
