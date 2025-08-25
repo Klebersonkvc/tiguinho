@@ -47,7 +47,11 @@ button{
 /* ---------------------- CSS TELA DE INÍCIO --------------------- */
 .tela{
   background-image: radial-gradient( #8d1600, #540600);
+<<<<<<< HEAD
   height: 100dvg;
+=======
+  height: 100%;
+>>>>>>> f95153d9f25317b776bda3248b41bb70ec35576b
   width: 100%;
   align-items: center;
   display: flex;
@@ -69,8 +73,12 @@ button{
   max-width: 400px;
 }
 
+<<<<<<< HEAD
 /* ----------- ANIMAÇÃO DA TELA DE INICIO --------------- */
 
+=======
+/*---------------------- CSS ANIMAÇÕES NA TELA DE INICIO*/
+>>>>>>> f95153d9f25317b776bda3248b41bb70ec35576b
 #tela-inicio{
   position: absolute;
   z-index: 1;
@@ -97,15 +105,24 @@ button{
  
 .caramelo-da-sorte > img{
   width: 100%;
+<<<<<<< HEAD
+=======
+  
+>>>>>>> f95153d9f25317b776bda3248b41bb70ec35576b
   object-fit: cover;
 }
 
 .caramelo-da-sorte :hover{
   transform: scale(1.5);
 }
+<<<<<<< HEAD
 
 .sparkle{
   width: 100%;
+=======
+.sparkle{
+    width: 100%;
+>>>>>>> f95153d9f25317b776bda3248b41bb70ec35576b
   height: 100vh;
   overflow: hidden;
   display: flex;
@@ -132,7 +149,10 @@ button{
     transform: translateY(-10vh) scale(1) rotate(360deg);
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> f95153d9f25317b776bda3248b41bb70ec35576b
 /* ---------------------------------------------------------------- */
 /* ************ */
 /* ------------------------------ CSS FORMULARIO ----------------------- */
