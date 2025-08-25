@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <main>
+
+    <div id="popup-formulario">
+        <div class="container">
+        <h2>Pagamento Demo</h2>
+        <div class="saldo" id="saldo">Saldo: R$ 0,00</div>
+
+        <h3>Depositar</h3>
+        <input type="number" id="deposito" placeholder="Valor a depositar">
+        <button onclick="depositar()">Depositar</button>
+
+        <h3>Sacar</h3>
+        <input type="number" id="saque" placeholder="Valor a sacar">
+        <button class="saque" onclick="sacar()">Sacar</button>
+    </div>
+
+    </div>
+
+    <div id="tela-inicio" class="tela inicio">
+        <img src="./img/fortune-caramelo.png" alt="fortune logo" id="logo-fortune">
+        <div id="botoes-inicio">
+            <button onclick="jogar()">Iniciar</button>
+            <button>Sobre</button>
+            <button>Sair</button>
+        </div>
+    </div>
+
+    <div id="tela-jogo" class="tela jogo">
+         <h1>🎰 Fortune Tiger</h1>
+
+        <div class="slot-container" id="slotGrid">
+            <div class="slot">🐯</div>
+            <div class="slot">🍀</div>
+            <div class="slot">💰</div>
+            <div class="slot">🔥</div>
+            <div class="slot">🐯</div>
+            <div class="slot">💎</div>
+            <div class="slot">🍀</div>
+            <div class="slot">💰</div>
+            <div class="slot">🐯</div>
+        </div>
+
+        <button onclick="girar()">Girar</button>
+        <button onclick="sair()">Sair</button>
+
+        <div id="result"></div>
+    </div>
+       
+    </main>
+    <script>
+           
+    const symbols = ['🐯', '💰', '💎', '🍀', '🔥'];
+    const slots = document.querySelectorAll('.slot');
+    const result = document.getElementById('result');
+
+    function girar() {
+      let tigerCount = 0;
+        
+      slots.forEach(slot => {
+        const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+        slot.textContent = randomSymbol;
+        if (randomSymbol === '🐯') tigerCount++;
+      });
+
+      if (tigerCount >= 3) {
+        result.textContent = '🎉 Você ganhou com ' + tigerCount + ' tigrinhos!';
+      } else {
+        result.textContent = '😢 Tente novamente!';
+      }
+    }
+    </script>
+</body>
+</html>
