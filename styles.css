@@ -157,15 +157,17 @@ button{
 
 .score{
   width: 20%;
-  background-color: #fcce1f;
+  background-color: #fcd01f00;
+  color: #dd7900;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .botoes.jogo{
   width: 20%;
-  background-color: #ffae42;
+  background-color: #ffad4200;
   font-size: 1.3cm;
 }
-
+/* 
 .container-niquel{
   display: flex;
   justify-content: center;
@@ -175,7 +177,7 @@ button{
   background-color: #c0400000; 
   background-image: url("./img/maquina.png");
   background-size: 100%; 
-  /* background-position-x: 0px; */
+  /* background-position-x: 0px; 
   background-repeat: no-repeat;
 }
 
@@ -210,8 +212,69 @@ button{
 
 .tile{
   width: 90%;
+} */
+.dinheiro{
+  width: 295px;
+  display:flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #c0400000;
+  z-index: 100;
+  bottom: 0;
+  margin-bottom: 80px;
+  margin-left: 46px;
+  color: #fcce1f;
+
 }
 
+.container-niquel{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  width: 420px;
+  height: 700px;
+  background-color: #c0400000; 
+  background-image: url("./img/maquina2.png");
+  background-size: 100%; 
+  /* background-position-x: 0px; */
+  background-repeat: no-repeat;
+}
+
+.tiles{
+  width: 540px;
+  height: 283px;
+  display:flex;
+  position: absolute;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  top: 240px;
+  background-color: #fff5cc00;
+  justify-content: space-around;
+}
+
+.colunaTrans{
+  width: 9%;
+}
+.colunaTrans2{
+  width: 38%;
+}
+.coluna01, .coluna02, .coluna03{
+  width: 19%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #42090000;
+}
+
+.tile{
+  width: 86%;
+}
 
 /*  ---------------------------------------------------------------   */
 /* *********** */

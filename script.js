@@ -137,10 +137,7 @@ function verificarFileira3(){
 }
 
 function verificar(){
-  // let fileira1 = [slot1, slot2, slot3];
-  // let fileira2 = [slot4, slot5, slot6];
-  // let fileira3 = [slot7, slot8, slot9];
-
+  
   if( verificarFileira1() || verificarFileira2() || verificarFileira3() == true ){
     alert("Parabens");
   }else{
