@@ -31,61 +31,25 @@ function sair(){
 
 // *********
 // ----------------  Funções Jogo  -------------------------
+let contadorDerrota = 0;
 
 function jogar(){
 
-  for(let i=1; i<9; i++){
-    let id = Math.floor(Math.random()*5)+1;
-    document.getElementById("tile"+i).src = "./img/tile"+id+".png";
+  for(let i=0; i<=contadorDerrota; i++){
+    for(let i=1; i<10; i++){
+      let id = Math.floor(Math.random()*5)+1;
+      document.getElementById("tile"+i).src = "./img/tile"+id+".png";
+    }
+    if(verificar()){
+      alert("PARABÉNS VOCÊ GANHOU "+i+" Tentativas de"+contadorDerrota);
+      contadorDerrota  = contadorDerrota/2
+      return;
+    }   
   }
-  verificar();
+    alert("VOCE PERDEU ");
+       console.log("Contador: "+ contadorDerrota)
+       contadorDerrota++
 }
-
-// verificação teste-----------------------------------------
-// function verificarFileiraCaramelo(){
-//   let slot1 = document.getElementById("tile1").src;
-//   let slot2 = document.getElementById("tile2").src;
-//   let slot3 = document.getElementById("tile3").src;
-//   let carta = "tile1.png";
-
-//   for(let i=0; i<2000; i++){
-//    if( slot1.endsWith(carta) && slot2.endsWith(carta) && slot3.endsWith(carta) ){
-//     console.log("GANHOU")
-//     return true;
-//     }
-//      console.log("Teste B 0"+i);
-//   }
-//     return false;
-// }
-// -----------------------------------------
-
-
-// function verificarFileira1(){
-//   let carta = "tile1.png";
-
-//   for(let i=0; i<4000; i++){
-//     // sorteia novamente os tiles da fileira 1
-//     for (let j=1; j<=3; j++){
-//       let id = Math.floor(Math.random()*5)+1;
-//       document.getElementById("tile"+j).src = "./img/tile"+id+".png";
-//     }
-
-//     // lê os src atualizados
-//     let slot1 = document.getElementById("tile1").src;
-//     let slot2 = document.getElementById("tile2").src;
-//     let slot3 = document.getElementById("tile3").src;
-
-//     if(slot1.endsWith(carta) && slot2.endsWith(carta) && slot3.endsWith(carta)){
-//       console.log("GANHOU na tentativa " + i);
-//       return true;
-//     }
-//   }
-
-//   console.log("Não conseguiu ganhar");
-//   return false;
-// }
-
-
 
 function verificarFileira1(){
   let slot1 = document.getElementById("tile1").src;
@@ -93,15 +57,12 @@ function verificarFileira1(){
   let slot3 = document.getElementById("tile3").src;
   let carta = "tile1.png";
 
-  for(let i=0; i<10; i++){
     if( slot1.endsWith(carta) && slot2.endsWith(carta) && slot3.endsWith(carta) ){
-      console.log("GANHOU")
+      console.log("A GANHOU / Tentativas: "+contadorDerrota)
       return true;
+    }   else{
+        return false;
     }
-     console.log("Teste A 0"+i);
-  }
-    return false;
-
 }
 
 function verificarFileira2(){
@@ -110,14 +71,12 @@ function verificarFileira2(){
   let slot6 = document.getElementById("tile6").src;
   let carta = "tile1.png";
 
-  for(let i=0; i<10; i++){
    if( slot4.endsWith(carta) && slot5.endsWith(carta) && slot6.endsWith(carta) ){
-    console.log("GANHOU")
+    console.log("B GANHOU / Tentativas: "+contadorDerrota)
     return true;
+    }else{
+       return false; 
     }
-     console.log("Teste B 0"+i);
-  }
-    return false;
 }
 
 function verificarFileira3(){
@@ -126,22 +85,19 @@ function verificarFileira3(){
   let slot9 = document.getElementById("tile9").src;
   let carta = "tile1.png";
 
-  for(let i=0; i<10; i++){
    if( slot7.endsWith(carta) && slot8.endsWith(carta) && slot9.endsWith(carta) ){
-    console.log("GANHOU")
+    console.log("C GANHOU / Tentativas: "+contadorDerrota)
     return true;
+    }else{
+      return false;
     }
-    console.log("Teste C 0"+i);
-  }
-    return false;
 }
 
 function verificar(){
-  
   if( verificarFileira1() || verificarFileira2() || verificarFileira3() == true ){
-    alert("Parabens");
-  }else{
-    alert("Perdeu");
+    return true;
+  }else {
+    return false;
   }
 }
 
