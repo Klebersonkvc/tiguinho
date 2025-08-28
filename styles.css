@@ -11,25 +11,26 @@ CORES:
 */
 /* ********** */
 /* --------------------------- CSS GERAL ---------------------------- */
-h1{
+h1 {
   font-size: 3em;
   margin-bottom: 10px;
   color: #fffbea;
   text-shadow: 2px 2px #c04000;
 }
-a{
+
+a {
   font-size: 1.3cm;
 }
 
-body{
+body {
   background-color: #540600;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   width: 100%;
   margin: 0;
 }
 
-button{
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+button {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 0.5cm;
   background-color: #fcce1f;
   background-image: linear-gradient(to bottom, #fcce1f, #dd7900);
@@ -39,14 +40,17 @@ button{
   border-radius: 10px;
   border: #420900 solid;
   box-shadow: #420900 5px 5px 0px 0px;
+  display: block;
+  position: relative;
+  z-index: 10;
   cursor: pointer;
 }
 
 /* ----------------------------------------------------------------- */
 /* ******** */
 /* ---------------------- CSS TELA DE INÍCIO --------------------- */
-.tela{
-  background-image: radial-gradient( #8d1600, #540600);
+.tela {
+  background-image: radial-gradient(#8d1600, #540600);
   height: 100dvg;
   width: 100%;
   align-items: center;
@@ -57,54 +61,64 @@ button{
   top: 5px;
 }
 
-#botoes-inicio{
+#botoes-inicio {
   min-height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
+  max-width: 200px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 100;
 }
 
-#logo-fortune{
+#logo-fortune {
   max-width: 400px;
 }
 
 /* ----------- ANIMAÇÃO DA TELA DE INICIO --------------- */
 
-#tela-inicio{
-  position: absolute;
+#tela-inicio {
+  position: relative;
   z-index: 1;
 }
 
-.caramelo-da-sorte{
+.caramelo-da-sorte {
   display: grid;
-  grid-template-columns: repeat(8,6rem);
+  grid-template-columns: repeat(8, 6rem);
   grid-template-rows: repeat(6.6rem);
 }
 
-.caramelo-da-sorte > img:nth-child(1){
+.caramelo-da-sorte>img:nth-child(1) {
   grid-row: 2/6;
   grid-column: 3/8;
   z-index: -1;
 }
 
-.caramelo-da-sorte > img:nth-child(2){
+.caramelo-da-sorte>img:nth-child(2) {
   grid-row: 2/6;
   grid-column: 3/7;
   transition: 1s;
   z-index: 100;
 }
- 
-.caramelo-da-sorte > img{
+
+.caramelo-da-sorte>img {
   width: 100%;
   object-fit: cover;
 }
 
-.caramelo-da-sorte :hover{
+.caramelo-da-sorte :hover {
   transform: scale(1.5);
 }
 
-.sparkle{
+.sparkle {
+  pointer-events: none;
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -113,22 +127,23 @@ button{
   z-index: -2;
 }
 
-.icone{
+.icone {
   width: 80px;
   height: 80px;
   background-image: url('./img/sparkle.png');
   background-size: contain;
-  background-position:center;
+  background-position: center;
   background-repeat: no-repeat;
   animation: anima linear infinite;
   animation-duration: calc(300s / var(--i));
 }
 
-@keyframes anima{
-  0%{
+@keyframes anima {
+  0% {
     transform: translateY(100vh) scale(0) rotate(0deg);
   }
-  100%{
+
+  100% {
     transform: translateY(-10vh) scale(1) rotate(360deg);
   }
 }
@@ -137,14 +152,15 @@ button{
 /* ************ */
 /* ------------------------------ CSS FORMULARIO ----------------------- */
 
-#popup-formulario{
-  display:none;
+#popup-formulario {
+  display: none;
   border: #420900 solid;
 }
+
 /* ------------------------------------------------------------------- */
 /* ********** */
 /* ---------------------- CSS TELA PRINCIPAL DE JOGO ---------------------- */
-.tela.jogo{
+.tela.jogo {
   width: 100%;
   height: 100%;
   display: none;
@@ -155,22 +171,27 @@ button{
   position: relative;
 }
 
-.score{
+.score {
   width: 20%;
   background-color: #fcd01f00;
   color: #dd7900;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.botoes.jogo{
+.botoes.jogo {
   width: 20%;
   background-color: #ffad4200;
   font-size: 1.3cm;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
 }
 
-.dinheiro{
+.dinheiro {
   width: 295px;
-  display:flex;
+  display: flex;
   position: absolute;
   align-items: center;
   justify-content: center;
@@ -181,24 +202,26 @@ button{
   margin-bottom: 80px;
   margin-left: 46px;
   color: #fcce1f;
+
 }
 
-.container-niquel{
+.container-niquel {
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   width: 420px;
   height: 700px;
-  background-color: #c0400000; 
+  background-color: #c0400000;
   background-image: url("./img/maquina2.png");
-  background-size: 100%; 
+  background-size: 100%;
+  /* background-position-x: 0px; */
   background-repeat: no-repeat;
 }
 
-.tiles{
+.tiles {
   width: 540px;
   height: 283px;
-  display:flex;
+  display: flex;
   position: absolute;
   z-index: 1;
   justify-content: center;
@@ -206,20 +229,19 @@ button{
   top: 240px;
   background-color: #fff5cc00;
   justify-content: space-around;
-  filter: blur();
-  
-}
-#tile01{
-  filter:blur();
 }
 
-.colunaTrans{
+.colunaTrans {
   width: 9%;
 }
-.colunaTrans2{
+
+.colunaTrans2 {
   width: 38%;
 }
-.coluna01, .coluna02, .coluna03{
+
+.coluna01,
+.coluna02,
+.coluna03 {
   width: 19%;
   height: 75%;
   display: flex;
@@ -230,10 +252,80 @@ button{
   background-color: #42090000;
 }
 
-.tile{
+.tile {
   width: 86%;
+}
+
+.aposta-container {
+  margin: 20px 0;
+  text-align: center;
+  color: #fcce1f;
+}
+
+#aposta {
+  padding: 10px;
+  font-size: 16px;
+  width: 200px;
+  border-radius: 8px;
+  border: 2px solid #fcce1f;
+  background-color: #420900;
+  color: #fffbea;
+  box-shadow: 2px 2px #8d1600;
+}
+
+.resultado-jogo {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+  color: #fcce1f;
+  font-weight: bold;
+  text-shadow: 1px 1px #420900;
+}
+
+.resultado-jogo {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+  color: #fcce1f;
+  font-weight: bold;
+  text-shadow: 1px 1px #420900;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(84, 6, 0, 0.9); /* fundo escuro com transparência */
+  backdrop-filter: blur(4px);
+}
+
+.modal-conteudo {
+  background-color: #420900;
+  margin: 10% auto;
+  padding: 30px;
+  border: 3px solid #fcce1f;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 15px;
+  color: #fffbea;
+  box-shadow: 0 0 20px #8d1600;
+  text-align: center;
+  position: relative;
+}
+
+.fechar-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fcce1f;
+  cursor: pointer;
 }
 
 /*  ---------------------------------------------------------------   */
 /* *********** */
-
