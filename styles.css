@@ -251,3 +251,39 @@ button{
 /*  ---------------------------------------------------------------   */
 /* *********** */
 
+/* ------------------------CSS MODAL---------------------------------*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(84, 6, 0, 0.9); /* fundo escuro com transparência */
+  backdrop-filter: blur(4px);
+}
+
+.modal-conteudo {
+  background-color: #420900;
+  margin: 10% auto;
+  padding: 30px;
+  border: 3px solid #fcce1f;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 15px;
+  color: #fffbea;
+  box-shadow: 0 0 20px #8d1600;
+  text-align: center;
+  position: relative;
+}
+
+.fechar-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fcce1f;
+  cursor: pointer;
+}
