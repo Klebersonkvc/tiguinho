@@ -22,7 +22,7 @@
           <img src="./img/moedas.png" alt="moedas" id="moedas">
         </div>
         <div id="botoes-inicio">
-            <button onclick="iniciarJogo()">Iniciar</button>
+            <button onclick="somDeclick(); iniciarJogo()">Iniciar</button>
             <button>Sobre</button>
             <button>Sair</button>
         </div>
@@ -65,11 +65,11 @@
 
         <h3>Depositar</h3>
         <input type="number" id="deposito" placeholder="Valor a depositar">
-          <button onclick="depositar()">Depositar</button>
+          <button onclick="somDeclick(); depositar()">Depositar</button>
 
         <h3>Sacar</h3>
         <input type="number" id="saque" placeholder="Valor a sacar">
-          <button class="saque" onclick="sacar()">Sacar</button>
+          <button class="saque" onclick="somDeclick(); sacar()">Sacar</button>
       </div>
     </div>
     <!-- --------------------------------------------------------------- -->
@@ -108,8 +108,8 @@
       </div>
       <div class="botoes jogo">
        
-        <button onclick="jogar()">JOGAR</button>
-        <button onclick="sair()">SAIR</button>
+        <button onclick="somDeclick(); jogar()">JOGAR</button>
+        <button onclick="somDeclick(); sair()">SAIR</button>
       </div>
     </div>
     <!-- ---------------------------------------------------------- -->

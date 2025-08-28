@@ -2,23 +2,25 @@
 let musicaFundo = new Audio("./sound/musica.mp3");
 musica.loop = true;
 function musica(){
-  if(musicaFundo.pause){
+  if(musicaFundo.paused){
     musicaFundo.currentTime = 0;
     musicaFundo.play();
+    musicaFundo.volume = 0.5;
   }
 }
 
-function click(){
-    let audio = new Audio("./sounds/buttonClick.mp3");
-    audio.play();
+function somDeclick() {
+  let audio = new Audio("./sound/buttonClick.mp3");
+  audio.currentTime = 0;
+  audio.play();
 }
 // ------------------------------------------------------------
 // *********
 // ----------------  Funções Globais  -------------------------
 
 function iniciarJogo(){
-    click();
-    //musica();
+    somDeclick();
+    musica();
     document.getElementById("tela-inicio").style.display="none";
     document.getElementById("tela-jogo").style.display="flex";
 }
