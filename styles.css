@@ -39,6 +39,19 @@ button{
   border-radius: 10px;
   border: #420900 solid;
   box-shadow: #420900 5px 5px 0px 0px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 0.5cm;
+  background-color: #fcce1f;
+  background-image: linear-gradient(to bottom, #fcce1f, #dd7900);
+  width: 130px;
+  height: 40px;
+  color: #420900;
+  border-radius: 10px;
+  border: #420900 solid;
+  box-shadow: #420900 5px 5px 0px 0px;
+  display: block;
+  position: relative;
+  z-index: 100;
   cursor: pointer;
 }
 
@@ -63,6 +76,7 @@ button{
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
+  z-index: 100;
 }
 
 #logo-fortune{
