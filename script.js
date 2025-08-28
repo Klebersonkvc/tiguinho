@@ -46,7 +46,7 @@ function abrirSobre() {
 // ----------------  Funções Globais  -------------------------
 function iniciarJogo() {
   // somDeclick();
-  // musica();
+  musica();
   document.getElementById("tela-inicio").style.display = "none";
   document.getElementById("tela-jogo").style.display = "flex";
 }
