@@ -34,24 +34,36 @@ function sair(){
 function embacar(){
   for(let a=1; a<10; a++){
     let tile = document.getElementById("tile"+a);
-    tile.style.transition = "filter 1s ease"; 
+    tile.style.transition = "filter 0.5s ease"; 
     tile.style.filter = "blur(10px)";         
   }
 }
 function desembacar(){
   for(let a=1; a<10; a++){
     let tile = document.getElementById("tile"+a);
-    tile.style.transition = "filter 1s ease"; 
+    tile.style.transition = "filter 0.5s ease"; 
     tile.style.filter = "blur(0px)";         
   }
 }
 
+// function trocar(){
+//   for(let i=0; i<=2500; i++){
+//    setTimeout(() => {
+//     for(let i=1; i<10; i++){ 
+//       let id = Math.floor(Math.random()*5)+1;
+//       document.getElementById("tile"+i).src = "./img/tile"+id+".png";
+//     }
+//     }, 1000)}
+// }
+
 let contadorDerrota = 0;
+
 function jogar(){
+  // trocar();
   embacar();
     setTimeout(() => {
       desembacar();
-    }, 1000);
+    }, 300);
 setTimeout(() => {
   for(let i=0; i<=contadorDerrota; i++){
     for(let i=1; i<10; i++){
@@ -64,7 +76,7 @@ setTimeout(() => {
       return;
     }   
   }
-}, 1000);
+}, 300);
    
        console.log("Contador: "+ contadorDerrota)
        contadorDerrota++
