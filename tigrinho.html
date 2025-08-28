@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="./styles.css">
+  <script src="./script.js"></script>
   <title>FORTUNE CARAMELO</title>
 </head>
 
@@ -18,6 +19,14 @@
     <!------------------------------------------------------------------  -->
     <!-- ******* -->
     <!-- ------------------- Tela de Início ------------------------------>
+     <div id="meuModal" class="modal">
+  <div class="modal-conteudo">
+    <span class="fechar-modal" onclick="fecharModal()">&times;</span>
+    <h2 id="modalTitulo">Título do Modal</h2>
+    <p id="modalMensagem">Mensagem que você quer mostrar aqui.</p>
+  </div>
+</div>
+
     <div id="tela-inicio" class="tela inicio">
       <div class="caramelo-da-sorte">
         <img src="./img/caramelo-sem-moeda1.png" alt="fortune logo" id="logo-fortune">
@@ -58,23 +67,6 @@
       </div>
     </div>
     <!-- --------------------------------------------------------------- -->
-    <!-- ******** -->
-    <!----------------------- Tela de formulário ------(incompleto)------ -->
-    <div id="popup-formulario">
-      <div class="container">
-        <h2>Pagamento Demo</h2>
-        <div class="saldo" id="saldo">Saldo: R$ 0,00</div>
-
-        <h3>Depositar</h3>
-        <input type="number" id="deposito" placeholder="Valor a depositar">
-        <button onclick="somDeclick(); depositar()">Depositar</button>
-
-        <h3>Sacar</h3>
-        <input type="number" id="saque" placeholder="Valor a sacar">
-        <button class="saque" onclick="somDeclick(); sacar()">Sacar</button>
-      </div>
-    </div>
-    <!-- --------------------------------------------------------------- -->
 <!-- Modal -->
 <div id="meuModal" class="modal" style="display:none;">
   <div class="modal-conteudo">
@@ -88,11 +80,16 @@
 
     <!-- -------------------- Tela de Jogo --------(incompleto)------- -->
     <div id="tela-jogo" class="tela jogo">
-      <div class="score">
-        <a>DEPOSITAR<br>
-          SACAR<br></a>
-        <p>*As jogadas custam R$10,00</p>
+      
+      <div class="aposta-container">
+        <h3>Valor da aposta</h3>
+        <input type="number" id="aposta" placeholder="Digite o valor da aposta" min="1" step="1">
       </div>
+
+      <div id="resultado" class="resultado-jogo">
+        <!-- Resultado da jogada aparece aqui -->
+      </div>
+
       <div>
         <div class="dinheiro" id="dinheiro">
           <h1>R$450,00</h1>
@@ -118,11 +115,11 @@
           </div>
           <div class="colunaTrans2"></div>
         </div>
-        <div class="container-niquel"> </div>
+        <div class="container-niquel"></div>
       </div>
       <div class="botoes jogo">
 
-        <button onclick="somDeclick(); jogar()">JOGAR</button>
+        <button onclick="somDeclick(); jogar();">JOGAR</button>
         <button onclick="somDeclick(); sair()">SAIR</button>
       </div>
     </div>
@@ -132,6 +129,6 @@
   </main>
 
 </body>
-  <script src="./script.js"></script>
+ 
 
 </html>

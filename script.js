@@ -1,6 +1,9 @@
 // ----------------   MUSICA & Sons ----------------------------
 let musicaFundo = new Audio("./sound/musica.mp3");
-musica.loop = true;
+musicaFundo.volume = 0.5;
+musicaFundo.loop = true;
+
+
 function musica() {
   if (musicaFundo.paused) {
     musicaFundo.currentTime = 0;
@@ -18,9 +21,9 @@ function somDeclick() {
 
 //---------função abrir modal-----------
 
-function abrirModal(titulo, mensagem) {
+function abrirModal(titulo) {
   document.getElementById("modalTitulo").innerText = titulo;
-  document.getElementById("modalMensagem").innerText = mensagem;
+  // document.getElementById("modalMensagem").innerText = mensagem;
   document.getElementById("meuModal").style.display = "block";
 }
 
@@ -39,11 +42,11 @@ window.onclick = function (event) {
 function abrirSobre() {
   abrirModal("Sobre o Jogo","FORTUNE CARAMELO é um jogo de sorte e diversão! 🍀");
 }
-// ----------------  Funções Globais  -------------------------
 
+// ----------------  Funções Globais  -------------------------
 function iniciarJogo() {
-  somDeclick();
-  musica();
+  // somDeclick();
+  // musica();
   document.getElementById("tela-inicio").style.display = "none";
   document.getElementById("tela-jogo").style.display = "flex";
 }
@@ -54,7 +57,7 @@ function sair() {
   musicaFundo.pause();
 }
 
-// *********
+
 // ----------------  Funções Jogo  -------------------------
 function embacar() {
   for (let a = 1; a < 10; a++) {
@@ -71,20 +74,23 @@ function desembacar() {
   }
 }
 
-// function trocar(){
-//   for(let i=0; i<=2500; i++){
-//    setTimeout(() => {
-//     for(let i=1; i<10; i++){ 
-//       let id = Math.floor(Math.random()*5)+1;
-//       document.getElementById("tile"+i).src = "./img/tile"+id+".png";
-//     }
-//     }, 1000)}
-// }
-
 let contadorDerrota = 0;
 
-function jogar() {
-  // trocar();
+function jogar(){
+  
+  let aposta = parseFloat(document.getElementById("aposta").value);
+
+  if (isNaN(aposta) || aposta <= 0) {
+    document.getElementById("resultado").innerHTML = "⚠️ Digite um valor válido para apostar.";
+    return;
+  }
+
+  if (aposta > saldoAtual) {
+    document.getElementById("resultado").innerHTML = "❌ Saldo insuficiente para essa aposta.";
+    return;
+  }
+  // **********************
+ 
   embacar();
   setTimeout(() => {
     desembacar();
@@ -96,15 +102,25 @@ function jogar() {
         document.getElementById("tile" + i).src = "./img/tile" + id + ".png";
       }
       if (verificar()) {
-        abrirModal("🎉 PARABÉNS!", "Você ganhou em " + i + " tentativas de " + contadorDerrota + "!");
+        abrirModal("🎉 PARABÉNS! Você ganhou !");
         contadorDerrota = contadorDerrota / 2
         return;
       }
     }
+    if(verificar()){
+      let ganho = aposta * 5;
+      saldoAtual += ganho;
+      document.getElementById("resultado").innerHTML =
+      `<br>Você ganhou R$ ${ganho.toFixed(2)}`;
+      contadorDerrota  = contadorDerrota/2
+      return;
+    }   
   }, 300);
+   
+       console.log("Contador: "+ contadorDerrota)
+       contadorDerrota++
 
-  console.log("Contador: " + contadorDerrota)
-  contadorDerrota++
+  atualizarSaldoVisual();
 }
 
 function verificarFileira1() {
@@ -114,7 +130,6 @@ function verificarFileira1() {
   let carta = "tile1.png";
 
   if (slot1.endsWith(carta) && slot2.endsWith(carta) && slot3.endsWith(carta)) {
-    abrirModal("🎉 A GANHOU!", "Tentativas: " + contadorDerrota);
     return true;
   } else {
     return false;
@@ -128,7 +143,6 @@ function verificarFileira2() {
   let carta = "tile1.png";
 
   if (slot4.endsWith(carta) && slot5.endsWith(carta) && slot6.endsWith(carta)) {
-    abrirModal("🎉 B GANHOU!", "Tentativas: " + contadorDerrota);
     return true;
   } else {
     return false;
@@ -142,29 +156,64 @@ function verificarFileira3() {
   let carta = "tile1.png";
 
   if (slot7.endsWith(carta) && slot8.endsWith(carta) && slot9.endsWith(carta)) {
-    abrirModal("🎉 C GANHOU!", "Tentativas: " + contadorDerrota);
     return true;
   } else {
     return false;
   }
 }
 
-function verificar() {
-  if (verificarFileira1() || verificarFileira2() || verificarFileira3() == true) {
+function verificar(){
+  let aposta = parseFloat(document.getElementById("aposta").value);
+  if( verificarFileira1() || verificarFileira2() || verificarFileira3() == true ){
     return true;
-  } else {
+  }else {
+    saldoAtual -= aposta;
+    document.getElementById("resultado").innerHTML =
+      `❌ Você perdeu R$ `+aposta.toFixed(2);
     return false;
   }
 }
+
+//-----função sobre----------
+function abrirSobre() {
+  alert("FORTUNE CARAMELO é um jogo de sorte e diversão! 🍀");
+}
+//---------função abrir modal-----------
+
+function abrirModal(titulo, mensagem) {
+  document.getElementById("modalTitulo").innerText = titulo;
+  document.getElementById("modalMensagem").innerText = mensagem;
+  document.getElementById("meuModal").style.display = "block";
+}
+
+function fecharModal() {
+  document.getElementById("meuModal").style.display = "none";
+}
+
+// Fecha o modal ao clicar fora da área de conteúdo
+window.onclick = function(event) {
+  const modal = document.getElementById("meuModal");
+  if (event.target === modal) {
+    fecharModal();
+  }
+};
+
+//----------------------Somar, diminuir e multiplicar (Probabilidades)---------
+
+let saldoAtual = 450.00; // valor inicial do saldo
+
+function atualizarSaldoVisual() {
+  document.getElementById("dinheiro").innerHTML = `<h1>R$ `+saldoAtual+'</h1>';
+
+}
+
+window.onload = atualizarSaldoVisual;
+
 
 // --------------------- Script do formulario ----------------------
 
-let saldo = 0;
-
-function atualizarSaldo() {
-  document.getElementById("saldo").innerText =
-    "Saldo: R$ " + saldo.toFixed(2).replace(".", ",");
-}
+// ⚠️ ERRO: esta variável "saldo" estava duplicando o controle de saldo.
+// Ela foi removida e substituída por "saldoAtual" em todas as funções abaixo.
 
 function depositar() {
   let valor = parseFloat(document.getElementById("deposito").value);
@@ -172,25 +221,7 @@ function depositar() {
     alert("Por favor, insira um valor válido para depositar.");
     return;
   }
-  saldo += valor;
-  atualizarSaldo();
+  saldoAtual += valor;
+  atualizarSaldoVisual();
   document.getElementById("deposito").value = "";
 }
-
-function sacar() {
-  let valor = parseFloat(document.getElementById("saque").value);
-  if (isNaN(valor) || valor <= 0) {
-    alert("Informe um valor válido para saque!");
-    return;
-  }
-  if (valor > saldo) {
-    alert("Saldo insuficiente!");
-    return;
-  }
-  saldo -= valor;
-  atualizarSaldo();
-  document.getElementById("saque").value = "";
-}
-
-atualizarSaldo();
-
