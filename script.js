@@ -31,10 +31,28 @@ function sair(){
 
 // *********
 // ----------------  Funções Jogo  -------------------------
+function embacar(){
+  for(let a=1; a<10; a++){
+    let tile = document.getElementById("tile"+a);
+    tile.style.transition = "filter 1s ease"; 
+    tile.style.filter = "blur(10px)";         
+  }
+}
+function desembacar(){
+  for(let a=1; a<10; a++){
+    let tile = document.getElementById("tile"+a);
+    tile.style.transition = "filter 1s ease"; 
+    tile.style.filter = "blur(0px)";         
+  }
+}
+
 let contadorDerrota = 0;
-
 function jogar(){
-
+  embacar();
+    setTimeout(() => {
+      desembacar();
+    }, 1000);
+setTimeout(() => {
   for(let i=0; i<=contadorDerrota; i++){
     for(let i=1; i<10; i++){
       let id = Math.floor(Math.random()*5)+1;
@@ -46,7 +64,8 @@ function jogar(){
       return;
     }   
   }
-    alert("VOCE PERDEU ");
+}, 1000);
+   
        console.log("Contador: "+ contadorDerrota)
        contadorDerrota++
 }
