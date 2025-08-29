@@ -46,7 +46,7 @@ function abrirSobre() {
 // ----------------  Funções Globais  -------------------------
 function iniciarJogo() {
   // somDeclick();
-  musica();
+  // musica();
   document.getElementById("tela-inicio").style.display = "none";
   document.getElementById("tela-jogo").style.display = "flex";
 }
@@ -74,7 +74,7 @@ function desembacar() {
   }
 }
 
-let contadorDerrota = 0;
+let contadorDerrota = 10;
 
 function jogar(){
   
@@ -89,32 +89,46 @@ function jogar(){
     document.getElementById("resultado").innerHTML = "❌ Saldo insuficiente para essa aposta.";
     return;
   }
-  // **********************
- 
+   
   embacar();
   setTimeout(() => {
     desembacar();
   }, 300);
+
   setTimeout(() => {
+
+    let venceu = false;
+
     for (let i = 0; i <= contadorDerrota; i++) {
       for (let i = 1; i < 10; i++) {
         let id = Math.floor(Math.random() * 5) + 1;
         document.getElementById("tile" + i).src = "./img/tile" + id + ".png";
       }
       if (verificar()) {
-        abrirModal("🎉 PARABÉNS! Você ganhou !");
-        contadorDerrota = contadorDerrota / 2
-        return;
+        venceu = true;
+        break
       }
     }
-    if(verificar()){
+     if (venceu) {
       let ganho = aposta * 5;
       saldoAtual += ganho;
+      abrirModal("🎉 PARABÉNS! Você ganhou !");
       document.getElementById("resultado").innerHTML =
-      `<br>Você ganhou R$ ${ganho.toFixed(2)}`;
-      contadorDerrota  = contadorDerrota/2
-      return;
-    }   
+        `<br>Você ganhou R$ ${ganho.toFixed(2)}`;
+      contadorDerrota = contadorDerrota / 2;
+      console.log("Valor da Aposta= " + aposta +
+        "\nValor do Ganho= " + ganho +
+        "\nValor do Saldo=" + saldoAtual
+      )
+    } else {
+      saldoAtual -= aposta;
+      document.getElementById("resultado").innerHTML =
+        `❌ Você perdeu R$ ${aposta.toFixed(2)}`;
+      console.log("Valor da Perda= " + aposta +
+        "\nValor do Saldo Atual= " + saldoAtual
+      )
+      contadorDerrota++;
+    }
   }, 300);
    
        console.log("Contador: "+ contadorDerrota)
@@ -163,13 +177,9 @@ function verificarFileira3() {
 }
 
 function verificar(){
-  let aposta = parseFloat(document.getElementById("aposta").value);
   if( verificarFileira1() || verificarFileira2() || verificarFileira3() == true ){
     return true;
   }else {
-    saldoAtual -= aposta;
-    document.getElementById("resultado").innerHTML =
-      `❌ Você perdeu R$ `+aposta.toFixed(2);
     return false;
   }
 }
@@ -207,7 +217,7 @@ function atualizarSaldoVisual() {
 
 }
 
-window.onload = atualizarSaldoVisual;
+// window.onload = atualizarSaldoVisual;
 
 
 // --------------------- Script do formulario ----------------------
