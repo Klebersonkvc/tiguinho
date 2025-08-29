@@ -177,9 +177,13 @@ function verificarFileira3() {
 }
 
 function verificar(){
+  let aposta = parseFloat(document.getElementById("aposta").value);
   if( verificarFileira1() || verificarFileira2() || verificarFileira3() == true ){
     return true;
   }else {
+    saldoAtual -= aposta;
+    document.getElementById("resultado").innerHTML =
+      `❌ Você perdeu R$ `+aposta.toFixed(2);
     return false;
   }
 }
