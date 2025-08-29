@@ -136,7 +136,7 @@ function jogar(){
 
   atualizarSaldoVisual();
 }
-
+ 
 function verificarFileira1() {
   let slot1 = document.getElementById("tile1").src;
   let slot2 = document.getElementById("tile2").src;
