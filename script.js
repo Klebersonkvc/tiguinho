@@ -74,7 +74,7 @@ function desembacar() {
   }
 }
 
-let contadorDerrota = 10;
+let contadorDerrota = 2;
 
 function jogar(){
   

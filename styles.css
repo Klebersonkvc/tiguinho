@@ -158,6 +158,65 @@ button {
 }
 
 /* ------------------------------------------------------------------- */
+
+/* ===-----------------== Alavanca (fundo) ==---------------------------=== */
+.alavanca {
+  position: absolute;
+  /* ancora no lado direito, na altura do meio da janela da máquina */
+  right: 55px;
+  top: 0%;
+  transform: rotate(0deg);
+
+  height: 130%; /* tamanho proporcional à máquina */
+  width: auto; /* mantém proporção */
+  pointer-events: auto;
+  z-index: 999;
+
+  
+  /* animação active */
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+
+  perspective: 900px; 
+  
+}
+
+#botao:hover {
+  background-color: rgba(0, 0, 0, 0);
+  height: 130%;
+}
+
+.container-alavanca{
+  transform: rotateX(-180deg);
+  margin: 20px 0;
+  background-color: rgba(255, 255, 0, 0);
+  height: 300px;
+  margin-top: 140px;
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 998;
+}
+
+.container-alavanca:has(#botao:active) .alavanca {
+  transform: rotateX(-180deg);
+  background-color: rgba(255, 255, 0, 0);
+}
+
+#botao {
+  position: absolute;
+  width: 90px;
+  height: 290px;
+  top: 50px;
+  right: 0px;
+  
+  background: rgba(255, 255, 255, 0.397); /* só pra enxergar, pode trocar */
+  border: none;
+  box-shadow: none;
+  z-index: 9999;
+}
+
 /* ********** */
 /* ---------------------- CSS TELA PRINCIPAL DE JOGO ---------------------- */
 .tela.jogo {
@@ -214,7 +273,7 @@ button {
   width: 420px;
   height: 700px;
   background-color: #c0400000;
-  background-image: url("./img/maquina2.png");
+  background-image: url("./img/maquina3.png");
   background-size: 100%;
   /* background-position-x: 0px; */
   background-repeat: no-repeat;
