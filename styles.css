@@ -211,7 +211,7 @@ button {
   top: 50px;
   right: 0px;
   
-  background: rgba(255, 255, 255, 0.397); /* só pra enxergar, pode trocar */
+  background: rgba(255, 255, 255, 0); /* só pra enxergar, pode trocar */
   border: none;
   box-shadow: none;
   z-index: 9999;

@@ -115,6 +115,8 @@ function jogar(){
       abrirModal("🎉 PARABÉNS! Você ganhou !");
       document.getElementById("resultado").innerHTML =
         `<br>Você ganhou R$ ${ganho.toFixed(2)}`;
+      atualizarSaldoVisual();
+
       contadorDerrota = contadorDerrota / 2;
       console.log("Valor da Aposta= " + aposta +
         "\nValor do Ganho= " + ganho +
@@ -124,9 +126,10 @@ function jogar(){
       saldoAtual -= aposta;
       document.getElementById("resultado").innerHTML =
         `❌ Você perdeu R$ ${aposta.toFixed(2)}`;
+      atualizarSaldoVisual();
+
       console.log("Valor da Perda= " + aposta +
-        "\nValor do Saldo Atual= " + saldoAtual
-      )
+        "\nValor do Saldo Atual= " + saldoAtual);
       contadorDerrota++;
     }
   }, 300);
@@ -134,7 +137,7 @@ function jogar(){
        console.log("Contador: "+ contadorDerrota)
        contadorDerrota++
 
-  atualizarSaldoVisual();
+  
 }
   
 function verificarFileira1() {
